@@ -1,0 +1,16 @@
+<!-- result.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>Volume Calculator</title>
+  </head>
+  <body>
+    <h1>Volume Calculator</h1>
+    {% if volume %}
+      <p>The {{ shape }} has a volume of {{ volume }}</p>
+    {% else %}
+      <p>No calculation performed</p>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">Calculate another volume</a></p>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!-- index.html -->
+<!doctype html>
+<html>
+  <head>
+    <title>Volume Calculator</title>
+  </head>
+  <body>
+    <h1>Volume Calculator</h1>
+    <form method="post" action="{{ url_for('index') }}">
+      <label>Shape:</label>
+      <select name="shape">
+        <option value="sphere">Sphere</option>
+        <option value="cone">Cone</option>
+        <option value="cylinder">Cylinder</option>
+      </select>
+      <br>
+      <label>Radius:</label>
+      <input type="number" name="radius" step="any" required>
+      <br>
+      <label>Height:</label>
+      <input type="number" name="height" step="any">
+      <br>
+      <label>Precision:</label>
+      <input type="number" name="precision" value="2" required>
+      <br>
+      <input type="submit" value="Calculate">
+    </form>
+  </body>
+</html>

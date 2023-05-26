@@ -5,14 +5,14 @@ from app import app
 
 class TestVolumeCalculator(unittest.TestCase):
 
-    # test the GET request to the root URL
+    # проверить запрос GET на корневой URL
     def test_index_get(self):
         tester = app.test_client(self)
         response = tester.get("/")
         status_code = response.status_code
         self.assertEqual(status_code, 200)
 
-    # test the POST request to the root URL with sphere data
+    # проверить запрос POST на корневой URL-адрес с данными сферы
     def test_index_post_sphere(self):
         tester = app.test_client(self)
         response = tester.post("/", data=dict(
@@ -26,7 +26,7 @@ class TestVolumeCalculator(unittest.TestCase):
         self.assertIn("Sphere", volume)
         self.assertIn("volume is 65.45", volume)
 
-    # test the POST request to the root URL with cone data
+    # проверить запрос POST на корневой URL-адрес с данными конуса
     def test_index_post_cone(self):
         tester = app.test_client(self)
         response = tester.post("/", data=dict(
@@ -41,7 +41,7 @@ class TestVolumeCalculator(unittest.TestCase):
         self.assertIn("Cone", volume)
         self.assertIn("volume is 314.16", volume)
 
-    # test the POST request to the root URL with cylinder data
+    # проверить запрос POST на корневой URL-адрес с данными цилиндра
     def test_index_post_cylinder(self):
         tester = app.test_client(self)
         response = tester.post("/", data=dict(
